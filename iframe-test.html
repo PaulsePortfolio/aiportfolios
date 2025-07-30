@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Stephensen Portfolio - Iframe Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2E4BC6;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .test-info {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .test-info h3 {
+            margin: 0 0 10px 0;
+            color: #1976d2;
+        }
+        .test-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .iframe-container {
+            border: 2px solid #2E4BC6;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: white;
+            position: relative;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            border: none;
+            min-height: 800px;
+            display: block;
+        }
+        .status {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .status.loading {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .technical-details {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .technical-details h4 {
+            margin: 0 0 10px 0;
+            color: #495057;
+        }
+        .technical-details code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Paul Stephensen Portfolio - WordPress Integration Test</h1>
+        <p class="subtitle">JCU Work-Based PhD • AIEE Framework • Research Excellence</p>
+        
+        <div class="test-info">
+            <h3>📋 Kinsta Connectivity Test</h3>
+            <p><strong>Target URL:</strong> <code>https://academic-portfolio-paulcstephensen.replit.app/embed-static</code></p>
+            <p><strong>Expected Response:</strong> HTTP 200 with portfolio HTML content</p>
+            <p><strong>Content Check:</strong> Should display "Paul Stephensen" and research papers</p>
+            <p><strong>Load Time:</strong> ~50-200ms typical response</p>
+        </div>
+
+        <div class="status loading" id="status">
+            ⏳ Loading portfolio content...
+        </div>
+
+        <div class="iframe-container">
+            <iframe 
+                id="portfolio-iframe"
+                src="https://academic-portfolio-paulcstephensen.replit.app/embed-static?view=papers&limit=6"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                loading="lazy"
+                title="Paul Stephensen Research Portfolio - AIEE Framework Integration"
+                referrerpolicy="strict-origin-when-cross-origin">
+                <p>Your browser does not support iframes. Please visit 
+                <a href="https://academic-portfolio-paulcstephensen.replit.app/embed-static" target="_blank">
+                Paul Stephensen Portfolio</a> directly.</p>
+            </iframe>
+        </div>
+
+        <div class="technical-details">
+            <h4>🔧 Technical Specifications</h4>
+            <p><strong>Hosting:</strong> Replit Cloud Infrastructure</p>
+            <p><strong>SSL:</strong> Managed via Cloudflare</p>
+            <p><strong>Content Type:</strong> <code>text/html</code></p>
+            <p><strong>CORS Headers:</strong> Configured for iframe embedding</p>
+            <p><strong>Security:</strong> Iframe sandboxing enabled</p>
+            <p><strong>Responsive:</strong> Mobile-optimized design</p>
+            <p><strong>Branding:</strong> James Cook University colors (#2E4BC6, #FCD34D)</p>
+        </div>
+
+        <div class="technical-details">
+            <h4>✅ WordPress Plugin Integration</h4>
+            <p><strong>Plugin Version:</strong> v3.1 with fixed embed URLs</p>
+            <p><strong>Shortcode:</strong> <code>[paul_portfolio view="papers" limit="6"]</code></p>
+            <p><strong>Gutenberg Block:</strong> "Paul Stephensen Portfolio" in Embed category</p>
+            <p><strong>Compatibility:</strong> WordPress 5.0-6.8, PHP 7.4-8.3</p>
+        </div>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('portfolio-iframe');
+        const status = document.getElementById('status');
+        let loadStartTime = Date.now();
+
+        iframe.addEventListener('load', function() {
+            const loadTime = Date.now() - loadStartTime;
+            
+            try {
+                // Try to access iframe content (will fail due to cross-origin, but that's expected)
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                
+                status.className = 'status success';
+                status.innerHTML = `✅ Portfolio loaded successfully in ${loadTime}ms - Ready for WordPress integration!`;
+                
+            } catch (e) {
+                // This is expected due to cross-origin restrictions
+                // The iframe still loaded successfully
+                status.className = 'status success';
+                status.innerHTML = `✅ Portfolio iframe loaded in ${loadTime}ms - Cross-origin security working correctly`;
+            }
+        });
+
+        iframe.addEventListener('error', function() {
+            status.className = 'status error';
+            status.innerHTML = '❌ Failed to load portfolio - Connection blocked or server unavailable';
+        });
+
+        // Timeout fallback
+        setTimeout(function() {
+            if (status.className.includes('loading')) {
+                status.className = 'status error';
+                status.innerHTML = '⏰ Timeout: Portfolio took longer than 10 seconds to load';
+            }
+        }, 10000);
+    </script>
+</body>
+</html>

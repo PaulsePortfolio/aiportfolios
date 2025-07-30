@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Embed Test</title>
+</head>
+<body>
+    <h1>Testing Embed Endpoint</h1>
+    <div id="results"></div>
+    
+    <script>
+        const resultsDiv = document.getElementById('results');
+        
+        async function testEmbed() {
+            try {
+                resultsDiv.innerHTML = '<p>Testing embed endpoint...</p>';
+                
+                const response = await fetch('/embed-static?view=papers&limit=6');
+                const responseText = await response.text();
+                
+                resultsDiv.innerHTML = `
+                    <h3>Response Status: ${response.status}</h3>
+                    <h3>Content Type: ${response.headers.get('content-type')}</h3>
+                    <h3>Response Length: ${responseText.length}</h3>
+                    <h3>First 500 chars:</h3>
+                    <pre style="background: #f0f0f0; padding: 10px; overflow: auto;">${responseText.substring(0, 500)}</pre>
+                `;
+                
+                if (responseText.includes('{"message"')) {
+                    resultsDiv.innerHTML += '<h2 style="color: red;">ERROR: Getting JSON instead of HTML!</h2>';
+                }
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<h2 style="color: red;">Error: ${error.message}</h2>`;
+            }
+        }
+        
+        testEmbed();
+    </script>
+</body>
+</html>

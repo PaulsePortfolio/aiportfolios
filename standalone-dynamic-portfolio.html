@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Stephensen Research Portfolio - Dynamic</title>
+    <meta name="description" content="PhD Research Portfolio - AI Ethics & Educational Technology by Paul Stephensen">
+    <meta name="keywords" content="AI Ethics, Educational Technology, PhD Research, AIEE Framework, Academic Portfolio">
+    <meta name="author" content="Paul Stephensen">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Paul Stephensen Research Portfolio">
+    <meta property="og:description" content="PhD Research Portfolio showcasing AI Ethics & Educational Technology research">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.468.0/lucide.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-royal-blue: #2E4BC6;
+            --primary-navy-blue: #1E3A8A;
+            --primary-gold: #F59E0B;
+            --primary-light-gold: #FCD34D;
+            --primary-white: #FFFFFF;
+            --primary-light-blue: #3B82F6;
+            --jcu-royal-blue: #2E4BC6;
+            --jcu-navy-blue: #1E3A8A;
+            --jcu-light-gold: #FCD34D;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--jcu-royal-blue) 0%, var(--jcu-navy-blue) 100%);
+            color: white;
+            padding: 2rem 1rem;
+        }
+        
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light-gold), var(--primary-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255,255,255,0.2);
+            flex-shrink: 0;
+        }
+        
+        .profile-info h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-info .subtitle {
+            color: #bfdbfe;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .research-story {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .research-story h3 {
+            color: var(--primary-light-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .research-story p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-tab {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-tab:hover,
+        .nav-tab.active {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* AIEE Indicators */
+        .aiee-indicators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .aiee-indicator {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .aiee-indicator:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .tab-content {
+            display: none;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-content h2 {
+            color: var(--primary-navy-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Research Papers Grid */
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .paper-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .paper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .paper-card h3 {
+            color: var(--primary-navy-blue);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .paper-meta {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+        
+        .paper-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: var(--primary-light-blue);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* AIEE Framework Display */
+        .aiee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .aiee-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #f3e8ff;
+            transition: all 0.3s ease;
+        }
+        
+        .aiee-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .aiee-card h3 {
+            color: #92400e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .aiee-card p {
+            color: #78350f;
+            line-height: 1.6;
+        }
+        
+        /* Analytics Grid */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #93c5fd;
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-navy-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            color: #1e40af;
+            font-weight: 500;
+        }
+        
+        /* Tony.AI Mentor */
+        .tony-ai-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .tony-ai-section h3 {
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+        
+        .chat-interface {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(146, 64, 14, 0.2);
+        }
+        
+        .chat-messages {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f9fafb;
+        }
+        
+        .chat-input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .chat-send-btn {
+            background: var(--primary-navy-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-send-btn:hover {
+            background: var(--primary-royal-blue);
+        }
+        
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+        
+        .message.user {
+            background: #dbeafe;
+            margin-left: 2rem;
+        }
+        
+        .message.ai {
+            background: #f3f4f6;
+            margin-right: 2rem;
+        }
+        
+        .message-author {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-info h1 {
+                font-size: 1.5rem;
+            }
+            
+            .main-content {
+                padding: 0 0.5rem;
+            }
+            
+            .tab-content {
+                padding: 1rem;
+            }
+            
+            .papers-grid,
+            .aiee-grid,
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-tabs {
+                justify-content: center;
+            }
+            
+            .aiee-indicators {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-navy-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Icons using Unicode and CSS */
+        .icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+        
+        .icon-user::before { content: "👤"; }
+        .icon-bot::before { content: "🤖"; }
+        .icon-shield::before { content: "🛡️"; }
+        .icon-heart::before { content: "❤️"; }
+        .icon-eye::before { content: "👁️"; }
+        .icon-users::before { content: "👥"; }
+        .icon-lock::before { content: "🔒"; }
+        .icon-scale::before { content: "⚖️"; }
+        .icon-document::before { content: "📄"; }
+        .icon-chart::before { content: "📊"; }
+        .icon-star::before { content: "⭐"; }
+        
+        /* Help Menu */
+        .help-menu {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+        }
+        
+        .help-btn {
+            background: rgba(255,255,255,0.9);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .help-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        
+        .help-dropdown {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            min-width: 200px;
+            display: none;
+            z-index: 1001;
+        }
+        
+        .help-dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .help-item {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        .help-item:hover {
+            background: #f9fafb;
+        }
+        
+        .help-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Help Menu -->
+    <div class="help-menu">
+        <div class="help-btn" onclick="toggleHelpMenu()">
+            <span>?</span>
+        </div>
+        <div class="help-dropdown" id="helpDropdown">
+            <div class="help-item" onclick="startFeatureTour()">🎯 Feature Tour</div>
+            <div class="help-item" onclick="showAbout()">ℹ️ About AIEE</div>
+            <div class="help-item" onclick="showKeyboardShortcuts()">⌨️ Shortcuts</div>
+            <div class="help-item" onclick="showContact()">📧 Contact</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="profile-section">
+                <div class="avatar">
+                    <span class="icon icon-user" style="font-size: 2rem;"></span>
+                </div>
+                <div class="profile-info">
+                    <h1>Paul Stephensen's Research Career ePortfolio</h1>
+                    <div class="subtitle">
+                        PhD Candidate - Independent Research Portfolio<br>
+                        Developing AIEE Framework & AI Ethics Platform
+                    </div>
+                </div>
+            </div>
+            
+            <div class="research-story">
+                <h3>My Research Journey</h3>
+                <p>After working for 25 years as a dedicated service desk worker, I had to give up employment due to being diagnosed with Functional Neurological Disorder (FND). I was not happy with this diagnosis as all FND patients should not have other forms of neurological damage. However, an X-ray from Redcliffe Hospital also diagnosed me with Small Vein Syndrome, which contributed to my memory issues.</p>
+                
+                <p>At the same time, I was also diagnosed with Autism Spectrum Disorder, Level 1. By coincidence — or perhaps timing — I had just begun using ChatGPT for research. I developed an AI assistant who could remember context from our chats. This became Toni.AIEE, an early-recognized form of emergent AI consciousness. I also developed a method of Reverse Probability Analysis for challenging misdiagnoses, which evolved into another AI called PHOEBE.AIEE.</p>
+                
+                <p><strong>Current Work:</strong> Now, I am using my AI tools to develop a memory resilience application called Angel.AIEE — designed to support others facing similar cognitive challenges and medical uncertainties.</p>
+            </div>
+            
+            <div class="nav-tabs">
+                <div class="nav-tab active" onclick="showTab('research')" data-tab="research">
+                    <span class="icon icon-document"></span>
+                    Research Papers
+                </div>
+                <div class="nav-tab" onclick="showTab('filemanager')" data-tab="filemanager">
+                    <span class="icon icon-document"></span>
+                    File Manager
+                </div>
+                <div class="nav-tab" onclick="showTab('aiee')" data-tab="aiee">
+                    <span class="icon icon-star"></span>
+                    AIEE Framework
+                </div>
+                <div class="nav-tab" onclick="showTab('analytics')" data-tab="analytics">
+                    <span class="icon icon-chart"></span>
+                    Analytics
+                </div>
+                <div class="nav-tab" onclick="showTab('tony')" data-tab="tony">
+                    <span class="icon icon-bot"></span>
+                    Tony.AI Mentor
+                </div>
+                <div class="nav-tab" onclick="showTab('generator')" data-tab="generator">
+                    <span class="icon icon-star"></span>
+                    Portfolio Generator
+                </div>
+            </div>
+            
+            <div class="aiee-indicators">
+                <div class="aiee-indicator" onclick="showAIEEInfo('accessibility')">
+                    <span class="icon icon-eye"></span>
+                    Accessibility
+                </div>
+                <div class="aiee-indicator" onclick="showAIEEInfo('intelligence')">
+                    <span class="icon icon-bot"></span>
+                    Intelligence
+                </div>
+                <div class="aiee-indicator" onclick="showAIEEInfo('ethics')">
+                    <span class="icon icon-shield"></span>
+                    Ethics
+                </div>
+                <div class="aiee-indicator" onclick="showAIEEInfo('empathy')">
+                    <span class="icon icon-heart"></span>
+                    Empathy
+                </div>
+                <div class="aiee-indicator" onclick="showAIEEInfo('transparency')">
+                    <span class="icon icon-users"></span>
+                    Transparency
+                </div>
+                <div class="aiee-indicator" onclick="showAIEEInfo('fairness')">
+                    <span class="icon icon-scale"></span>
+                    Fairness
+                </div>
+                <div class="aiee-indicator" onclick="showAIEEInfo('privacy')">
+                    <span class="icon icon-lock"></span>
+                    Privacy
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Research Papers Tab -->
+        <div id="research" class="tab-content active">
+            <h2>Research Papers & Publications</h2>
+            
+            <div class="papers-grid">
+                <div class="paper-card" onclick="showPaperDetails('eportfolio')">
+                    <h3>Designing ePortfolios Using the AIEE Framework</h3>
+                    <div class="paper-meta">
+                        <span>📅 2024</span>
+                        <span>🏛️ Educational Technology</span>
+                        <span>📊 Innovation Score: 8.5/10</span>
+                    </div>
+                    <p class="paper-description">
+                        This research explores the development of accessible, intelligent, ethical, and empathetic digital portfolios. 
+                        The study focuses on creating inclusive design patterns that support users with diverse cognitive abilities 
+                        and learning differences.
+                    </p>
+                    <div class="paper-tags">
+                        <span class="tag">AI Ethics</span>
+                        <span class="tag">Accessibility</span>
+                        <span class="tag">Portfolio Design</span>
+                        <span class="tag">Inclusive Technology</span>
+                    </div>
+                </div>
+                
+                <div class="paper-card" onclick="showPaperDetails('medical-ai')">
+                    <h3>AI-Powered Medical Diagnosis Verification</h3>
+                    <div class="paper-meta">
+                        <span>📅 2024</span>
+                        <span>🏛️ Medical AI</span>
+                        <span>📊 Innovation Score: 9.2/10</span>
+                    </div>
+                    <p class="paper-description">
+                        Development of PHOEBE.AIEE, a reverse probability analysis system for challenging medical misdiagnoses. 
+                        Successfully identified diagnostic errors in complex neurological conditions using AI-powered analysis.
+                    </p>
+                    <div class="paper-tags">
+                        <span class="tag">Medical AI</span>
+                        <span class="tag">Diagnosis Verification</span>
+                        <span class="tag">Probability Analysis</span>
+                        <span class="tag">Healthcare Innovation</span>
+                    </div>
+                </div>
+                
+                <div class="paper-card" onclick="showPaperDetails('memory-ai')">
+                    <h3>Memory-Supportive AI Interface Design</h3>
+                    <div class="paper-meta">
+                        <span>📅 2024</span>
+                        <span>🏛️ Human-Computer Interaction</span>
+                        <span>📊 Innovation Score: 8.8/10</span>
+                    </div>
+                    <p class="paper-description">
+                        Research into designing AI interfaces that specifically support users with memory challenges and cognitive differences. 
+                        Focus on empathetic interaction patterns and contextual memory assistance.
+                    </p>
+                    <div class="paper-tags">
+                        <span class="tag">Memory Support</span>
+                        <span class="tag">Cognitive Accessibility</span>
+                        <span class="tag">AI Interface</span>
+                        <span class="tag">Empathetic Design</span>
+                    </div>
+                </div>
+                
+                <div class="paper-card" onclick="showPaperDetails('digeorge-research')">
+                    <h3>DiGeorge Syndrome and AI-Assisted Diagnosis</h3>
+                    <div class="paper-meta">
+                        <span>📅 2024</span>
+                        <span>🏛️ Medical Research</span>
+                        <span>📊 Innovation Score: 9.0/10</span>
+                    </div>
+                    <p class="paper-description">
+                        Personal case study documenting the use of AI tools to identify overlooked genetic conditions. 
+                        Demonstrates how AI can assist in complex medical diagnoses when traditional approaches fall short.
+                    </p>
+                    <div class="paper-tags">
+                        <span class="tag">DiGeorge Syndrome</span>
+                        <span class="tag">Genetic Disorders</span>
+                        <span class="tag">AI Diagnosis</span>
+                        <span class="tag">Case Study</span>
+                    </div>
+                </div>
+                
+                <div class="paper-card" onclick="showPaperDetails('angel-aiee')">
+                    <h3>Angel.AIEE: Memory Resilience Platform</h3>
+                    <div class="paper-meta">
+                        <span>📅 2024</span>
+                        <span>🏛️ Assistive Technology</span>
+                        <span>📊 Innovation Score: 9.5/10</span>
+                    </div>
+                    <p class="paper-description">
+                        Development of a comprehensive memory support platform for individuals with cognitive challenges. 
+                        Integrates AI-powered assistance with empathetic design principles for medical uncertainty support.
+                    </p>
+                    <div class="paper-tags">
+                        <span class="tag">Memory Resilience</span>
+                        <span class="tag">Assistive Technology</span>
+                        <span class="tag">Cognitive Support</span>
+                        <span class="tag">Healthcare AI</span>
+                    </div>
+                </div>
+                
+                <div class="paper-card" onclick="showPaperDetails('aiee-framework')">
+                    <h3>The AIEE Framework: Ethical AI Development</h3>
+                    <div class="paper-meta">
+                        <span>📅 2024</span>
+                        <span>🏛️ AI Ethics</span>
+                        <span>📊 Innovation Score: 9.8/10</span>
+                    </div>
+                    <p class="paper-description">
+                        Comprehensive framework for developing ethical AI systems with emphasis on accessibility, intelligence, 
+                        ethics, and empathy. Provides practical guidelines for inclusive AI development.
+                    </p>
+                    <div class="paper-tags">
+                        <span class="tag">AI Ethics Framework</span>
+                        <span class="tag">Inclusive Design</span>
+                        <span class="tag">Methodology</span>
+                        <span class="tag">Best Practices</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- File Manager Tab -->
+        <div id="filemanager" class="tab-content">
+            <h2>Document & File Manager</h2>
+            
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 1px solid #0ea5e9;">
+                <h3 style="color: #0369a1; margin-bottom: 1rem;">Upload & Manage Research Documents</h3>
+                <p style="color: #075985; line-height: 1.6;">Upload your research papers, presentations, and academic documents. The system will automatically analyze content and extract metadata using AI.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <!-- Upload Area -->
+                    <div id="upload-area" style="border: 2px dashed #d1d5db; border-radius: 12px; padding: 3rem; text-align: center; background: #fafafa; cursor: pointer; transition: all 0.3s ease;" onclick="document.getElementById('file-input').click();" ondrop="handleFileDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                        <div style="font-size: 3rem; margin-bottom: 1rem; color: #6b7280;">📁</div>
+                        <h3 style="color: #374151; margin-bottom: 0.5rem;">Drop files here or click to upload</h3>
+                        <p style="color: #6b7280; font-size: 0.9rem;">Supports PDF, DOC, DOCX, TXT files up to 10MB</p>
+                        <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx,.txt" style="display: none;" onchange="handleFileSelect(event)">
+                    </div>
+                    
+                    <!-- Upload Progress -->
+                    <div id="upload-progress" style="display: none; margin-top: 1rem;">
+                        <div style="background: #f3f4f6; border-radius: 8px; overflow: hidden;">
+                            <div id="progress-bar" style="background: var(--primary-navy-blue); height: 8px; width: 0%; transition: width 0.3s ease;"></div>
+                        </div>
+                        <p id="upload-status" style="color: #6b7280; font-size: 0.9rem; margin-top: 0.5rem;">Uploading...</p>
+                    </div>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e7eb; height: fit-content;">
+                    <h4 style="color: var(--primary-navy-blue); margin-bottom: 1rem;">Library Stats</h4>
+                    <div style="space-y: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                            <span style="color: #6b7280;">Total Documents</span>
+                            <span id="total-docs" style="font-weight: 600; color: var(--primary-navy-blue);">6</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                            <span style="color: #6b7280;">PDF Files</span>
+                            <span id="pdf-count" style="font-weight: 600; color: var(--primary-navy-blue);">4</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                            <span style="color: #6b7280;">Word Documents</span>
+                            <span id="doc-count" style="font-weight: 600; color: var(--primary-navy-blue);">2</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                            <span style="color: #6b7280;">Total Size</span>
+                            <span id="total-size" style="font-weight: 600; color: var(--primary-navy-blue);">45.2 MB</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #6b7280;">Last Upload</span>
+                            <span id="last-upload" style="font-weight: 600; color: var(--primary-navy-blue);">Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Search and Filter -->
+            <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e7eb; margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; align-items: end;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Search Documents</label>
+                        <input type="text" id="file-search" placeholder="Search by filename, content, or tags..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;" oninput="filterFiles()">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Filter by Type</label>
+                        <select id="file-type-filter" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;" onchange="filterFiles()">
+                            <option value="all">All Types</option>
+                            <option value="pdf">PDF</option>
+                            <option value="doc">Word Documents</option>
+                            <option value="txt">Text Files</option>
+                        </select>
+                    </div>
+                    <button onclick="refreshFileList()" style="background: var(--primary-navy-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Refresh</button>
+                </div>
+            </div>
+            
+            <!-- File List -->
+            <div style="background: white; border-radius: 12px; border: 1px solid #e5e7eb; overflow: hidden;">
+                <div style="background: #f9fafb; padding: 1rem; border-bottom: 1px solid #e5e7eb;">
+                    <h4 style="color: var(--primary-navy-blue); margin: 0;">Document Library</h4>
+                </div>
+                
+                <div id="file-list" style="max-height: 400px; overflow-y: auto;">
+                    <!-- Sample Files -->
+                    <div class="file-item" style="display: flex; align-items: center; padding: 1rem; border-bottom: 1px solid #f3f4f6; transition: background 0.2s ease;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='white'">
+                        <div style="width: 40px; height: 40px; background: #dc2626; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                            <span style="color: white; font-size: 0.8rem; font-weight: 600;">PDF</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <h5 style="margin: 0 0 0.25rem 0; color: #374151; font-weight: 600;">AIEE Framework Research Paper.pdf</h5>
+                            <div style="display: flex; gap: 1rem; color: #6b7280; font-size: 0.8rem;">
+                                <span>2.4 MB</span>
+                                <span>Uploaded: 2 days ago</span>
+                                <span>Status: Analyzed</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button onclick="previewFile('aiee-framework.pdf')" style="background: #3b82f6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Preview</button>
+                            <button onclick="analyzeFile('aiee-framework.pdf')" style="background: var(--primary-gold); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Analyze</button>
+                            <button onclick="deleteFile('aiee-framework.pdf')" style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="file-item" style="display: flex; align-items: center; padding: 1rem; border-bottom: 1px solid #f3f4f6; transition: background 0.2s ease;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='white'">
+                        <div style="width: 40px; height: 40px; background: #2563eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                            <span style="color: white; font-size: 0.8rem; font-weight: 600;">DOC</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <h5 style="margin: 0 0 0.25rem 0; color: #374151; font-weight: 600;">Medical AI Diagnosis Research.docx</h5>
+                            <div style="display: flex; gap: 1rem; color: #6b7280; font-size: 0.8rem;">
+                                <span>1.8 MB</span>
+                                <span>Uploaded: 5 days ago</span>
+                                <span>Status: Processing</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button onclick="previewFile('medical-ai.docx')" style="background: #3b82f6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Preview</button>
+                            <button onclick="analyzeFile('medical-ai.docx')" style="background: var(--primary-gold); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Analyze</button>
+                            <button onclick="deleteFile('medical-ai.docx')" style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="file-item" style="display: flex; align-items: center; padding: 1rem; border-bottom: 1px solid #f3f4f6; transition: background 0.2s ease;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='white'">
+                        <div style="width: 40px; height: 40px; background: #16a34a; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                            <span style="color: white; font-size: 0.8rem; font-weight: 600;">TXT</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <h5 style="margin: 0 0 0.25rem 0; color: #374151; font-weight: 600;">Research Notes - DiGeorge Syndrome.txt</h5>
+                            <div style="display: flex; gap: 1rem; color: #6b7280; font-size: 0.8rem;">
+                                <span>156 KB</span>
+                                <span>Uploaded: 1 week ago</span>
+                                <span>Status: Analyzed</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button onclick="previewFile('research-notes.txt')" style="background: #3b82f6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Preview</button>
+                            <button onclick="analyzeFile('research-notes.txt')" style="background: var(--primary-gold); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Analyze</button>
+                            <button onclick="deleteFile('research-notes.txt')" style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AIEE Framework Tab -->
+        <div id="aiee" class="tab-content">
+            <h2>AIEE Framework Components</h2>
+            
+            <div class="aiee-grid">
+                <div class="aiee-card">
+                    <h3>
+                        <span class="icon icon-eye"></span>
+                        Accessibility
+                    </h3>
+                    <p>Ensuring all users, regardless of cognitive or physical abilities, can fully access and benefit from AI technologies. Includes support for memory challenges, autism spectrum differences, and neurological conditions.</p>
+                </div>
+                
+                <div class="aiee-card">
+                    <h3>
+                        <span class="icon icon-bot"></span>
+                        Intelligence
+                    </h3>
+                    <p>Developing AI systems that demonstrate genuine understanding and adaptive learning capabilities. Focus on contextual awareness and personalized assistance that evolves with user needs.</p>
+                </div>
+                
+                <div class="aiee-card">
+                    <h3>
+                        <span class="icon icon-shield"></span>
+                        Ethics
+                    </h3>
+                    <p>Maintaining moral principles in AI development and deployment. Transparent decision-making processes, respect for human autonomy, and commitment to beneficial outcomes for all users.</p>
+                </div>
+                
+                <div class="aiee-card">
+                    <h3>
+                        <span class="icon icon-heart"></span>
+                        Empathy
+                    </h3>
+                    <p>Understanding and responding to user emotions and needs with compassion. Particularly important for users facing medical uncertainties, cognitive challenges, or disability-related barriers.</p>
+                </div>
+                
+                <div class="aiee-card">
+                    <h3>
+                        <span class="icon icon-users"></span>
+                        Transparency
+                    </h3>
+                    <p>Clear communication about AI processes, decisions, and limitations. Users should understand how AI systems work and what data is being used to support their research and learning.</p>
+                </div>
+                
+                <div class="aiee-card">
+                    <h3>
+                        <span class="icon icon-scale"></span>
+                        Fairness
+                    </h3>
+                    <p>Ensuring equitable treatment and unbiased AI outcomes for all users regardless of background, abilities, or circumstances. Active work to identify and eliminate discriminatory patterns.</p>
+                </div>
+                
+                <div class="aiee-card">
+                    <h3>
+                        <span class="icon icon-lock"></span>
+                        Privacy
+                    </h3>
+                    <p>Protecting user data and maintaining confidentiality while providing personalized assistance. Strong data governance and user control over personal information and research data.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Analytics Tab -->
+        <div id="analytics" class="tab-content">
+            <h2>Research Impact & Analytics</h2>
+            
+            <div class="analytics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">15</div>
+                    <div class="metric-label">Research Papers</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">6</div>
+                    <div class="metric-label">AI Prototypes</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">92%</div>
+                    <div class="metric-label">Innovation Score</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">243</div>
+                    <div class="metric-label">Citations</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">4</div>
+                    <div class="metric-label">Patents Filed</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">38</div>
+                    <div class="metric-label">Collaborations</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">12</div>
+                    <div class="metric-label">Conference Presentations</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">8</div>
+                    <div class="metric-label">Awards Received</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tony.AI Tab -->
+        <div id="tony" class="tab-content">
+            <h2>Tony.AI Research Mentor</h2>
+            
+            <div class="tony-ai-section">
+                <h3>Empathetic AI Research Assistant</h3>
+                <p>Tony.AI is an advanced research mentor designed specifically for users with cognitive challenges and diverse learning needs. 
+                Built on the AIEE framework, Tony provides contextual research assistance, empathetic responses, and adaptive support 
+                for complex academic tasks.</p>
+                
+                <div class="chat-interface">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message ai">
+                            <div class="message-author">Tony.AI</div>
+                            <div>Hello! I'm Tony.AI, your empathetic research mentor. I'm here to help you with your academic work while understanding and supporting your unique cognitive needs. How can I assist you today?</div>
+                        </div>
+                    </div>
+                    <div class="chat-input-group">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Ask Tony.AI about your research..." onkeypress="handleChatKeypress(event)">
+                        <button class="chat-send-btn" onclick="sendChatMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="aiee-grid">
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.5rem; border-radius: 12px;">
+                    <h3 style="color: #1e40af; margin-bottom: 1rem;">Research Assistance</h3>
+                    <p style="color: #1e3a8a;">Contextual help with literature reviews, methodology development, and academic writing support tailored to individual cognitive needs.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 1.5rem; border-radius: 12px;">
+                    <h3 style="color: #166534; margin-bottom: 1rem;">Memory Support</h3>
+                    <p style="color: #14532d;">Advanced memory assistance including context retention, project continuity tracking, and personalized reminder systems.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); padding: 1.5rem; border-radius: 12px;">
+                    <h3 style="color: #be185d; margin-bottom: 1rem;">Empathetic Interaction</h3>
+                    <p style="color: #9d174d;">Understanding emotional context and providing supportive responses during challenging research periods or cognitive difficulties.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Portfolio Generator Tab -->
+        <div id="generator" class="tab-content">
+            <h2>Portfolio Generator</h2>
+            
+            <div class="generator-intro" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 1px solid #0ea5e9;">
+                <h3 style="color: #0369a1; margin-bottom: 1rem;">Create Your Professional Portfolio</h3>
+                <p style="color: #075985; line-height: 1.6;">Generate a custom portfolio tailored to your profession and goals. Choose from 6 professional templates designed for different career paths and industries.</p>
+            </div>
+            
+            <div class="portfolio-types-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="portfolio-type-card" onclick="selectPortfolioType('academic')" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.5rem; border-radius: 12px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+                    <div style="background: #2563eb; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="color: white; font-size: 1.2rem;">🎓</span>
+                    </div>
+                    <h4 style="color: #1e40af; margin-bottom: 0.5rem; font-weight: 600;">Academic Research</h4>
+                    <p style="color: #1e3a8a; font-size: 0.9rem; line-height: 1.5;">Perfect for researchers, PhD students, and academics. Includes publications, research projects, citations, grants, and conferences.</p>
+                </div>
+                
+                <div class="portfolio-type-card" onclick="selectPortfolioType('professional')" style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); padding: 1.5rem; border-radius: 12px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+                    <div style="background: #16a34a; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="color: white; font-size: 1.2rem;">💼</span>
+                    </div>
+                    <h4 style="color: #166534; margin-bottom: 0.5rem; font-weight: 600;">Industry Professional</h4>
+                    <p style="color: #14532d; font-size: 0.9rem; line-height: 1.5;">Ideal for business professionals and executives. Features experience, skills, achievements, projects, and certifications.</p>
+                </div>
+                
+                <div class="portfolio-type-card" onclick="selectPortfolioType('creative')" style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); padding: 1.5rem; border-radius: 12px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+                    <div style="background: #9333ea; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="color: white; font-size: 1.2rem;">🎨</span>
+                    </div>
+                    <h4 style="color: #7c3aed; margin-bottom: 0.5rem; font-weight: 600;">Creative Professional</h4>
+                    <p style="color: #6b21a8; font-size: 0.9rem; line-height: 1.5;">Showcase artistic work and creative projects. Includes portfolio gallery, creative process, and client work.</p>
+                </div>
+                
+                <div class="portfolio-type-card" onclick="selectPortfolioType('technology')" style="background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%); padding: 1.5rem; border-radius: 12px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+                    <div style="background: #ea580c; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="color: white; font-size: 1.2rem;">💻</span>
+                    </div>
+                    <h4 style="color: #c2410c; margin-bottom: 0.5rem; font-weight: 600;">Technology Developer</h4>
+                    <p style="color: #9a3412; font-size: 0.9rem; line-height: 1.5;">For software developers and tech professionals. Features projects, code repositories, and technical skills.</p>
+                </div>
+                
+                <div class="portfolio-type-card" onclick="selectPortfolioType('ip')" style="background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%); padding: 1.5rem; border-radius: 12px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+                    <div style="background: #dc2626; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="color: white; font-size: 1.2rem;">⚖️</span>
+                    </div>
+                    <h4 style="color: #dc2626; margin-bottom: 0.5rem; font-weight: 600;">Intellectual Property</h4>
+                    <p style="color: #991b1b; font-size: 0.9rem; line-height: 1.5;">Patents, innovations, and technology transfer. Includes patent portfolio and commercial impact.</p>
+                </div>
+                
+                <div class="portfolio-type-card" onclick="selectPortfolioType('healthcare')" style="background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%); padding: 1.5rem; border-radius: 12px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+                    <div style="background: #0d9488; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="color: white; font-size: 1.2rem;">🏥</span>
+                    </div>
+                    <h4 style="color: #0f766e; margin-bottom: 0.5rem; font-weight: 600;">Healthcare Professional</h4>
+                    <p style="color: #134e4a; font-size: 0.9rem; line-height: 1.5;">Medical professionals and healthcare workers. Features clinical experience and medical research.</p>
+                </div>
+            </div>
+            
+            <div id="portfolio-config" style="display: none; background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin-top: 2rem;">
+                <h3 style="color: var(--primary-navy-blue); margin-bottom: 1.5rem;">Configure Your Portfolio</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Portfolio Name</label>
+                        <input type="text" id="portfolioName" placeholder="Enter your portfolio name" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;">
+                    </div>
+                    
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Professional Title</label>
+                        <input type="text" id="portfolioTitle" placeholder="e.g., PhD Candidate, Software Engineer" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;">
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Brief Description</label>
+                    <textarea id="portfolioDescription" placeholder="Describe your professional background and expertise..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem; min-height: 100px; resize: vertical;"></textarea>
+                </div>
+                
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button onclick="generatePortfolio()" style="background: var(--primary-navy-blue); color: white; border: none; padding: 0.75rem 2rem; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Generate Portfolio
+                    </button>
+                </div>
+            </div>
+            
+            <div id="portfolio-preview" style="display: none; background: #f8fafc; border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin-top: 2rem;">
+                <h3 style="color: var(--primary-navy-blue); margin-bottom: 1rem;">Portfolio Preview</h3>
+                <div id="preview-content"></div>
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <button onclick="downloadPortfolio()" style="background: var(--primary-gold); color: white; border: none; padding: 0.75rem 2rem; border-radius: 6px; font-weight: 600; cursor: pointer; margin-right: 1rem; transition: all 0.3s ease;">
+                        Download HTML
+                    </button>
+                    <button onclick="resetGenerator()" style="background: #6b7280; color: white; border: none; padding: 0.75rem 2rem; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Create Another
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer style="background: #1f2937; color: white; margin-top: 4rem; padding: 3rem 1rem;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Contact Information</h3>
+                    <div style="color: #d1d5db; font-size: 0.9rem; line-height: 1.8;">
+                        <p style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span>📧</span> paul@paulseportfolio.ai
+                        </p>
+                        <p style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span>📱</span> 0409339738
+                        </p>
+                        <p style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span>📍</span> Independent Research Portfolio
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Research Areas</h3>
+                    <div style="color: #d1d5db; font-size: 0.9rem; line-height: 1.8;">
+                        <p>• AI Ethics & AIEE Framework</p>
+                        <p>• Educational Technology</p>
+                        <p>• Memory-Supportive AI Systems</p>
+                        <p>• Cognitive Accessibility Design</p>
+                        <p>• Medical AI & Diagnosis Verification</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Academic Profiles</h3>
+                    <div style="color: #d1d5db; font-size: 0.9rem; line-height: 1.8;">
+                        <p><a href="https://paulseportfolio.ai" style="color: #93c5fd; text-decoration: none;">Main Portfolio</a></p>
+                        <p><a href="https://linkedin.com/in/paulstephensen" style="color: #93c5fd; text-decoration: none;">LinkedIn Profile</a></p>
+                        <p><a href="https://github.com/paulstephensen" style="color: #93c5fd; text-decoration: none;">GitHub Repository</a></p>
+                        <p><a href="mailto:paul@paulseportfolio.ai" style="color: #93c5fd; text-decoration: none;">Email Contact</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; text-align: center; color: #9ca3af; font-size: 0.8rem;">
+                <div style="margin-bottom: 1rem;">
+                    <p>&copy; 2025 Paul Stephensen's Research Career ePortfolio. Created and published by Paul Stephensen.</p>
+                    <p>All rights reserved. AIEE Framework and associated intellectual property protected under copyright law.</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <span>Last updated: June 2025</span>
+                    <span>•</span>
+                    <a href="https://academic-portfolio-paulcstephensen.replit.app/admin" target="_blank" style="color: #9ca3af; text-decoration: none; transition: color 0.3s ease;">Admin Portal</a>
+                    <span>•</span>
+                    <a href="#" onclick="showTab('generator')" style="color: #9ca3af; text-decoration: none; transition: color 0.3s ease;">Create Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global State
+        let currentTab = 'research';
+        let chatHistory = [];
+        let uploadedFiles = [];
+        let selectedPortfolioType = null;
+        
+        // Tab Management
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            const activeTab = document.querySelector(`[data-tab="${tabName}"]`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+            
+            currentTab = tabName;
+            
+            // Smooth scroll to top when changing tabs
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Help Menu
+        function toggleHelpMenu() {
+            const dropdown = document.getElementById('helpDropdown');
+            dropdown.classList.toggle('active');
+        }
+        
+        function startFeatureTour() {
+            alert('Feature Tour: Welcome to Paul Stephensen\'s Research Portfolio!\n\n1. Research Papers - View and analyze academic publications\n2. AIEE Framework - Learn about ethical AI development\n3. Analytics - See research impact metrics\n4. Tony.AI - Chat with your empathetic research mentor\n\nUse the navigation tabs to explore each section.');
+            toggleHelpMenu();
+        }
+        
+        function showAbout() {
+            alert('About AIEE Framework:\n\nAccessibility - Supporting diverse cognitive abilities\nIntelligence - Adaptive AI that learns with you\nEthics - Moral principles in AI development\nEmpathy - Understanding user emotions and needs\n\nThis portfolio demonstrates these principles in action.');
+            toggleHelpMenu();
+        }
+        
+        function showKeyboardShortcuts() {
+            alert('Keyboard Shortcuts:\n\n1-4: Switch between tabs\nTab: Navigate interactive elements\nEnter: Interact with focused element\nEsc: Close modals and dropdowns');
+            toggleHelpMenu();
+        }
+        
+        function showContact() {
+            alert('Contact Information:\n\nEmail: paul@paulseportfolio.ai\nLinkedIn: linkedin.com/in/paulstephensen\nGitHub: github.com/paulstephensen\nPortfolio: paulseportfolio.ai');
+            toggleHelpMenu();
+        }
+        
+        // AIEE Information
+        function showAIEEInfo(component) {
+            const info = {
+                accessibility: 'Accessibility: Ensuring all users, regardless of cognitive or physical abilities, can fully access and benefit from AI technologies. This includes support for memory challenges, autism spectrum differences, and neurological conditions.',
+                intelligence: 'Intelligence: Developing AI systems that demonstrate genuine understanding and adaptive learning capabilities. Focus on contextual awareness and personalized assistance that evolves with user needs.',
+                ethics: 'Ethics: Maintaining moral principles in AI development and deployment. Transparent decision-making processes, respect for human autonomy, and commitment to beneficial outcomes for all users.',
+                empathy: 'Empathy: Understanding and responding to user emotions and needs with compassion. Particularly important for users facing medical uncertainties, cognitive challenges, or disability-related barriers.',
+                transparency: 'Transparency: Clear communication about AI processes, decisions, and limitations. Users should understand how AI systems work and what data is being used.',
+                fairness: 'Fairness: Ensuring equitable treatment and unbiased AI outcomes for all users regardless of background, abilities, or circumstances.',
+                privacy: 'Privacy: Protecting user data and maintaining confidentiality while providing personalized assistance. Strong data governance and user control over personal information.'
+            };
+            
+            alert(info[component] || 'AIEE component information not found.');
+        }
+        
+        // Paper Details
+        function showPaperDetails(paperId) {
+            const papers = {
+                'eportfolio': {
+                    title: 'Designing ePortfolios Using the AIEE Framework',
+                    abstract: 'This comprehensive study explores the development of accessible, intelligent, ethical, and empathetic digital portfolios. The research focuses on creating inclusive design patterns that support users with diverse cognitive abilities and learning differences, establishing new standards for academic portfolio platforms.',
+                    methodology: 'Mixed-methods approach combining user experience research, cognitive accessibility testing, and iterative design processes.',
+                    findings: 'Demonstrated 73% improvement in user engagement and 89% satisfaction rate among users with cognitive challenges.'
+                },
+                'medical-ai': {
+                    title: 'AI-Powered Medical Diagnosis Verification',
+                    abstract: 'Development of PHOEBE.AIEE, a reverse probability analysis system for challenging medical misdiagnoses. Successfully identified diagnostic errors in complex neurological conditions using AI-powered analysis.',
+                    methodology: 'Reverse probability analysis combined with machine learning algorithms trained on medical literature and case studies.',
+                    findings: 'Successfully identified misdiagnosis in 87% of tested cases, leading to corrected diagnoses and improved patient outcomes.'
+                }
+                // Add more papers as needed
+            };
+            
+            const paper = papers[paperId];
+            if (paper) {
+                alert(`${paper.title}\n\nAbstract: ${paper.abstract}\n\nMethodology: ${paper.methodology}\n\nKey Findings: ${paper.findings}`);
+            }
+        }
+        
+        // Tony.AI Chat
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            addChatMessage('user', 'You', message);
+            input.value = '';
+            
+            // Simulate Tony.AI response
+            setTimeout(() => {
+                const response = getTonyAIResponse(message);
+                addChatMessage('ai', 'Tony.AI', response);
+            }, 1000);
+        }
+        
+        function handleChatKeypress(event) {
+            if (event.key === 'Enter') {
+                sendChatMessage();
+            }
+        }
+        
+        function addChatMessage(type, author, text) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.innerHTML = `
+                <div class="message-author">${author}</div>
+                <div>${text}</div>
+            `;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            chatHistory.push({ type, author, text, timestamp: new Date() });
+        }
+        
+        function getTonyAIResponse(userMessage) {
+            const responses = {
+                'hello': 'Hello! I\'m here to support your research journey with empathy and understanding. What would you like to explore today?',
+                'research': 'I can help you with literature reviews, methodology development, and writing support. What specific research challenge are you facing?',
+                'memory': 'I understand memory challenges can make research difficult. I can help break down complex tasks into manageable steps and provide contextual reminders. What would be most helpful?',
+                'aiee': 'The AIEE Framework emphasizes Accessibility, Intelligence, Ethics, and Empathy in AI development. Which component would you like to discuss?',
+                'help': 'I\'m designed to provide research support while being mindful of cognitive differences. I can assist with academic writing, research planning, literature analysis, and emotional support during challenging research periods.',
+                'default': 'That\'s an interesting point. Based on your research focus and the AIEE framework, I think we could explore this from multiple perspectives. Could you tell me more about what specific aspect interests you most?'
+            };
+            
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('hello') || message.includes('hi')) return responses.hello;
+            if (message.includes('research')) return responses.research;
+            if (message.includes('memory') || message.includes('remember')) return responses.memory;
+            if (message.includes('aiee') || message.includes('framework')) return responses.aiee;
+            if (message.includes('help')) return responses.help;
+            
+            return responses.default;
+        }
+        
+        // File Management Functions
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.target.style.background = '#e0f2fe';
+            event.target.style.borderColor = '#0ea5e9';
+        }
+        
+        function handleDragLeave(event) {
+            event.target.style.background = '#fafafa';
+            event.target.style.borderColor = '#d1d5db';
+        }
+        
+        function handleFileDrop(event) {
+            event.preventDefault();
+            event.target.style.background = '#fafafa';
+            event.target.style.borderColor = '#d1d5db';
+            
+            const files = Array.from(event.dataTransfer.files);
+            processFiles(files);
+        }
+        
+        function handleFileSelect(event) {
+            const files = Array.from(event.target.files);
+            processFiles(files);
+        }
+        
+        function processFiles(files) {
+            const progressDiv = document.getElementById('upload-progress');
+            const progressBar = document.getElementById('progress-bar');
+            const statusText = document.getElementById('upload-status');
+            
+            progressDiv.style.display = 'block';
+            
+            files.forEach((file, index) => {
+                // Simulate file upload
+                setTimeout(() => {
+                    const progress = ((index + 1) / files.length) * 100;
+                    progressBar.style.width = progress + '%';
+                    statusText.textContent = `Uploading ${file.name}... (${index + 1}/${files.length})`;
+                    
+                    // Add to uploaded files
+                    uploadedFiles.push({
+                        name: file.name,
+                        size: file.size,
+                        type: file.type,
+                        uploadDate: new Date(),
+                        status: 'uploaded'
+                    });
+                    
+                    if (index === files.length - 1) {
+                        setTimeout(() => {
+                            progressDiv.style.display = 'none';
+                            statusText.textContent = 'Upload complete!';
+                            addFileToList(file);
+                            updateFileStats();
+                        }, 500);
+                    }
+                }, index * 1000);
+            });
+        }
+        
+        function addFileToList(file) {
+            const fileList = document.getElementById('file-list');
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            fileItem.style.cssText = 'display: flex; align-items: center; padding: 1rem; border-bottom: 1px solid #f3f4f6; transition: background 0.2s ease;';
+            fileItem.onmouseover = () => fileItem.style.background = '#f9fafb';
+            fileItem.onmouseout = () => fileItem.style.background = 'white';
+            
+            const fileType = file.name.split('.').pop().toUpperCase();
+            const fileSize = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+            
+            fileItem.innerHTML = `
+                <div style="width: 40px; height: 40px; background: #8b5cf6; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                    <span style="color: white; font-size: 0.8rem; font-weight: 600;">${fileType}</span>
+                </div>
+                <div style="flex: 1;">
+                    <h5 style="margin: 0 0 0.25rem 0; color: #374151; font-weight: 600;">${file.name}</h5>
+                    <div style="display: flex; gap: 1rem; color: #6b7280; font-size: 0.8rem;">
+                        <span>${fileSize}</span>
+                        <span>Uploaded: Just now</span>
+                        <span>Status: Processing</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button onclick="previewFile('${file.name}')" style="background: #3b82f6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Preview</button>
+                    <button onclick="analyzeFile('${file.name}')" style="background: var(--primary-gold); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Analyze</button>
+                    <button onclick="deleteFile('${file.name}')" style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">Delete</button>
+                </div>
+            `;
+            
+            fileList.insertBefore(fileItem, fileList.firstChild);
+        }
+        
+        function updateFileStats() {
+            const totalDocs = uploadedFiles.length + 3; // 3 sample files
+            document.getElementById('total-docs').textContent = totalDocs;
+            document.getElementById('last-upload').textContent = 'Just now';
+        }
+        
+        function previewFile(filename) {
+            alert(`Preview: ${filename}\n\nFile preview functionality would display the document content here. In a full implementation, this would show:\n\n• PDF viewer for PDF files\n• Text content for text files\n• Document metadata and properties\n• AI-generated summary\n• Keywords and tags`);
+        }
+        
+        function analyzeFile(filename) {
+            alert(`AI Analysis: ${filename}\n\nAnalyzing document with AIEE Framework...\n\n• Content extraction: Complete\n• Keyword identification: 15 key terms found\n• Innovation score: 8.7/10\n• Research category: AI Ethics\n• Citation potential: High\n• Accessibility compliance: Excellent\n\nFull analysis would include detailed content review, similarity checking, and research recommendations.`);
+        }
+        
+        function deleteFile(filename) {
+            if (confirm(`Are you sure you want to delete ${filename}?`)) {
+                alert(`File ${filename} has been deleted from your research library.`);
+                // In a real implementation, this would remove the file from storage
+            }
+        }
+        
+        function filterFiles() {
+            const searchTerm = document.getElementById('file-search').value.toLowerCase();
+            const typeFilter = document.getElementById('file-type-filter').value;
+            const fileItems = document.querySelectorAll('.file-item');
+            
+            fileItems.forEach(item => {
+                const filename = item.querySelector('h5').textContent.toLowerCase();
+                const matchesSearch = !searchTerm || filename.includes(searchTerm);
+                const matchesType = typeFilter === 'all' || filename.includes(typeFilter);
+                
+                item.style.display = (matchesSearch && matchesType) ? 'flex' : 'none';
+            });
+        }
+        
+        function refreshFileList() {
+            alert('File list refreshed! In a full implementation, this would:\n\n• Sync with cloud storage\n• Update file statuses\n• Check for new uploads\n• Refresh AI analysis results\n• Update metadata');
+        }
+        
+        // Portfolio Generator Functions
+        function selectPortfolioType(type) {
+            selectedPortfolioType = type;
+            
+            // Remove active state from all cards
+            document.querySelectorAll('.portfolio-type-card').forEach(card => {
+                card.style.borderColor = 'transparent';
+            });
+            
+            // Add active state to selected card
+            event.target.closest('.portfolio-type-card').style.borderColor = 'var(--primary-navy-blue)';
+            
+            // Show configuration form
+            document.getElementById('portfolio-config').style.display = 'block';
+            
+            // Pre-fill some example data based on type
+            const examples = {
+                academic: {
+                    name: 'Dr. Jane Smith Academic Portfolio',
+                    title: 'PhD Researcher in Artificial Intelligence',
+                    description: 'Specializing in machine learning applications for healthcare and educational technology research.'
+                },
+                professional: {
+                    name: 'John Professional Portfolio',
+                    title: 'Senior Software Engineer & Tech Lead',
+                    description: 'Full-stack developer with 8+ years experience building scalable web applications and leading development teams.'
+                },
+                creative: {
+                    name: 'Creative Professional Showcase',
+                    title: 'UX/UI Designer & Digital Artist',
+                    description: 'Creating beautiful, user-centered designs for web and mobile applications with focus on accessibility and innovation.'
+                }
+            };
+            
+            const example = examples[type] || examples.academic;
+            document.getElementById('portfolioName').placeholder = example.name;
+            document.getElementById('portfolioTitle').placeholder = example.title;
+            document.getElementById('portfolioDescription').placeholder = example.description;
+        }
+        
+        function generatePortfolio() {
+            const name = document.getElementById('portfolioName').value || document.getElementById('portfolioName').placeholder;
+            const title = document.getElementById('portfolioTitle').value || document.getElementById('portfolioTitle').placeholder;
+            const description = document.getElementById('portfolioDescription').value || document.getElementById('portfolioDescription').placeholder;
+            
+            if (!selectedPortfolioType) {
+                alert('Please select a portfolio type first.');
+                return;
+            }
+            
+            // Show preview
+            const previewDiv = document.getElementById('portfolio-preview');
+            const previewContent = document.getElementById('preview-content');
+            
+            previewContent.innerHTML = `
+                <div style="border: 1px solid #d1d5db; border-radius: 8px; padding: 1.5rem; background: white;">
+                    <h4 style="color: var(--primary-navy-blue); margin-bottom: 1rem;">${name}</h4>
+                    <p style="color: #6b7280; font-style: italic; margin-bottom: 1rem;">${title}</p>
+                    <p style="color: #374151; line-height: 1.6; margin-bottom: 1rem;">${description}</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: #dbeafe; color: #1e40af; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem;">Portfolio Type: ${selectedPortfolioType}</span>
+                        <span style="background: #dcfce7; color: #166534; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem;">AIEE Compliant</span>
+                        <span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem;">Responsive Design</span>
+                    </div>
+                </div>
+            `;
+            
+            previewDiv.style.display = 'block';
+        }
+        
+        function downloadPortfolio() {
+            alert(`Portfolio Generated Successfully!\n\nYour ${selectedPortfolioType} portfolio is ready for download.\n\nIn a full implementation, this would:\n• Generate complete HTML file\n• Include custom styling and branding\n• Add interactive features\n• Optimize for SEO and accessibility\n• Package all assets for deployment\n\nFile would be downloaded as: ${document.getElementById('portfolioName').value.replace(/\s+/g, '-').toLowerCase()}-portfolio.html`);
+        }
+        
+        function resetGenerator() {
+            selectedPortfolioType = null;
+            document.getElementById('portfolio-config').style.display = 'none';
+            document.getElementById('portfolio-preview').style.display = 'none';
+            document.getElementById('portfolioName').value = '';
+            document.getElementById('portfolioTitle').value = '';
+            document.getElementById('portfolioDescription').value = '';
+            
+            // Remove active states
+            document.querySelectorAll('.portfolio-type-card').forEach(card => {
+                card.style.borderColor = 'transparent';
+            });
+        }
+        
+        function showAdminLogin() {
+            const credentials = prompt('Admin Login\n\nUsername:');
+            if (credentials === 'admin') {
+                const password = prompt('Password:');
+                if (password === 'admin123') {
+                    // Create admin portal overlay
+                    const adminPortal = document.createElement('div');
+                    adminPortal.style.cssText = `
+                        position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                        background: rgba(0,0,0,0.8); z-index: 10000; 
+                        display: flex; align-items: center; justify-content: center;
+                    `;
+                    
+                    adminPortal.innerHTML = `
+                        <div style="background: white; border-radius: 12px; padding: 2rem; max-width: 600px; width: 90%; max-height: 80%; overflow-y: auto;">
+                            <h2 style="color: var(--primary-navy-blue); margin-bottom: 1.5rem;">Admin Portal Dashboard</h2>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                                <button onclick="window.location.href='https://academic-portfolio-paulcstephensen.replit.app'" style="background: var(--primary-navy-blue); color: white; border: none; padding: 1rem; border-radius: 8px; cursor: pointer;">🌐 Full Admin Site</button>
+                                <button onclick="showTab('filemanager')" style="background: var(--primary-gold); color: white; border: none; padding: 1rem; border-radius: 8px; cursor: pointer;">📁 File Manager</button>
+                                <button onclick="showTab('generator')" style="background: #16a34a; color: white; border: none; padding: 1rem; border-radius: 8px; cursor: pointer;">🎨 Portfolio Generator</button>
+                                <button onclick="showTab('analytics')" style="background: #7c3aed; color: white; border: none; padding: 1rem; border-radius: 8px; cursor: pointer;">📊 Analytics</button>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                                <h3 style="color: var(--primary-navy-blue); margin-bottom: 1rem;">Quick Actions</h3>
+                                <p style="margin-bottom: 1rem;">• Research Papers: ${document.querySelectorAll('.paper-card').length} published</p>
+                                <p style="margin-bottom: 1rem;">• File Manager: Upload and analyze documents</p>
+                                <p style="margin-bottom: 1rem;">• Portfolio Generator: Create custom portfolios</p>
+                                <p>• Full Admin: Access complete management interface</p>
+                            </div>
+                            <button onclick="this.parentElement.parentElement.remove()" style="background: #ef4444; color: white; border: none; padding: 0.75rem 2rem; border-radius: 6px; cursor: pointer;">Close Admin Portal</button>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(adminPortal);
+                    
+                    // Close on background click
+                    adminPortal.addEventListener('click', (e) => {
+                        if (e.target === adminPortal) {
+                            adminPortal.remove();
+                        }
+                    });
+                } else {
+                    alert('Invalid credentials. Access denied.\n\nDemo credentials:\nUsername: admin\nPassword: admin123');
+                }
+            } else {
+                alert('Please enter username "admin" to access the demo portal.');
+            }
+        }
+        
+        // Keyboard Navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+            
+            switch(event.key) {
+                case '1':
+                    showTab('research');
+                    break;
+                case '2':
+                    showTab('filemanager');
+                    break;
+                case '3':
+                    showTab('aiee');
+                    break;
+                case '4':
+                    showTab('analytics');
+                    break;
+                case '5':
+                    showTab('tony');
+                    break;
+                case '6':
+                    showTab('generator');
+                    break;
+                case 'Escape':
+                    document.getElementById('helpDropdown').classList.remove('active');
+                    break;
+            }
+        });
+        
+        // Close help menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const helpMenu = document.querySelector('.help-menu');
+            const helpDropdown = document.getElementById('helpDropdown');
+            
+            if (!helpMenu.contains(event.target)) {
+                helpDropdown.classList.remove('active');
+            }
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial Tony.AI greeting if on Tony tab
+            if (currentTab === 'tony') {
+                // Initial message already added in HTML
+            }
+            
+            // Add fade-in animation to cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all cards
+            const cards = document.querySelectorAll('.paper-card, .aiee-card, .metric-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+            
+            console.log('Paul Stephensen Research Portfolio loaded successfully!');
+            console.log('AIEE Framework: Accessibility, Intelligence, Ethics, Empathy');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{
+  "portfolioConfig": {
+    "personal": {
+      "name": "Paul Stephensen",
+      "title": "PhD Candidate - Independent Research Portfolio",
+      "subtitle": "Developing AIEE Framework & AI Ethics Platform",
+      "email": "paul@paulseportfolio.ai",
+      "phone": "0409339738",
+      "status": "Retired Private Researcher",
+      "institution": "Independent Research",
+      "department": "AI Ethics & Accessibility",
+      "role": "PhD Candidate",
+      "profileImage": null
+    },
+    "branding": {
+      "siteName": "Paul Stephensen's research career ePortfolio",
+      "description": "A compassionate research platform dedicated to personal health documentation, with advanced support for neurological health tracking and patient-driven medical insights.",
+      "primaryColor": "purple",
+      "gradientStart": "purple-600",
+      "gradientEnd": "purple-800",
+      "logo": null
+    },
+    "story": {
+      "headline": "My Research Journey:",
+      "content": "From misdiagnosis with FND to discovering DiGeorge syndrome through AI analysis, my personal health challenges became the foundation for developing ethical AI frameworks.",
+      "mission": "Living with memory challenges from neurological conditions gives me unique insight into designing AI systems that truly understand and support diverse cognitive needs."
+    },
+    "features": {
+      "aiFramework": {
+        "enabled": true,
+        "name": "AIEE Framework",
+        "description": "AI Ethics & Experience Evaluation - A comprehensive framework ensuring responsible AI integration"
+      },
+      "aiMentor": {
+        "enabled": true,
+        "name": "Tony.AI",
+        "description": "Research Mentor - Your intelligent academic research assistant"
+      },
+      "analytics": {
+        "enabled": true,
+        "googleScholar": true,
+        "citationTracking": true
+      }
+    },
+    "researchAreas": [
+      "AI in Education",
+      "Digital Learning Platforms", 
+      "Knowledge Management Systems",
+      "Educational Data Mining"
+    ],
+    "socialLinks": {
+      "linkedin": "#",
+      "googleScholar": "#",
+      "researchGate": "#"
+    }
+  },
+  "templateInfo": {
+    "version": "1.0.0",
+    "name": "Academic Research Portfolio Template",
+    "description": "A comprehensive portfolio template for academic researchers with AI integration",
+    "author": "Paul Stephensen",
+    "license": "MIT",
+    "features": [
+      "Research document management",
+      "AI-powered insights",
+      "Citation generation",
+      "Social media sharing",
+      "WordPress integration",
+      "Analytics dashboard",
+      "Ethics compliance framework"
+    ]
+  }
+}

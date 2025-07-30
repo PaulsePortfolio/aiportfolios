@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Stephensen's Research Portfolio</title>
+    <meta name="description" content="Paul Stephensen's Work-Based PhD Research Portfolio - AIEE Framework, AI Ethics, and Academic Excellence at James Cook University">
+    <meta name="keywords" content="Paul Stephensen, PhD, Research Portfolio, AIEE Framework, AI Ethics, James Cook University, Academic Research">
+    <meta name="author" content="Paul Stephensen">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Paul Stephensen's Research Portfolio">
+    <meta property="og:description" content="Work-Based PhD Research Portfolio featuring AIEE Framework and AI Ethics Research">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paulseportfolio.ai">
+    <meta property="og:image" content="https://paulseportfolio.ai/assets/portfolio-preview.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paul Stephensen's Research Portfolio">
+    <meta name="twitter:description" content="Work-Based PhD Research Portfolio featuring AIEE Framework and AI Ethics Research">
+    <meta name="twitter:image" content="https://paulseportfolio.ai/assets/portfolio-preview.png">
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #374151;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2E4BC6 0%, #1e3a8a 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(46, 75, 198, 0.3);
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #FCD34D 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2E4BC6;
+            box-shadow: 0 4px 15px rgba(252, 211, 77, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FCD34D;
+            margin-bottom: 0.75rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #e0e7ff;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .description {
+            color: #c7d2fe;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .aiee-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            width: 60px;
+            height: 60px;
+            background: #FCD34D;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #2E4BC6;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(252, 211, 77, 0.4);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        .content {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #2E4BC6, #FCD34D);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: #6b7280;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .paper-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(46, 75, 198, 0.1);
+            border-left: 6px solid #2E4BC6;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .paper-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2E4BC6, #FCD34D);
+        }
+        
+        .paper-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(46, 75, 198, 0.2);
+        }
+        
+        .paper-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .paper-meta {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-badge {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            color: #1e40af;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #93c5fd;
+        }
+        
+        .year-badge {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #92400e;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #fbbf24;
+        }
+        
+        .paper-description {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.6;
+        }
+        
+        .paper-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .venue {
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        .innovation-score {
+            color: #059669;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .stats-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 30px rgba(46, 75, 198, 0.1);
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2E4BC6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .papers-grid {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                padding: 2rem 1rem;
+            }
+            .title {
+                font-size: 2rem;
+            }
+            .content {
+                padding: 2rem 1rem;
+            }
+            .aiee-badges {
+                gap: 1rem;
+            }
+            .badge {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.8rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .papers-grid {
+                gap: 1.5rem;
+            }
+            .paper-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="avatar" title="Paul Stephensen">P</div>
+        <h1 class="title">Paul Stephensen's Research Portfolio</h1>
+        <p class="subtitle">PhD Candidate • James Cook University</p>
+        <p class="description">AIEE Framework & AI Ethics Research Platform</p>
+        <div class="aiee-badges">
+            <div class="badge" title="Accessibility - Ensuring inclusive design for all users">A</div>
+            <div class="badge" title="Intelligence - Leveraging AI for enhanced research capabilities">I</div>
+            <div class="badge" title="Ethics - Maintaining ethical standards in AI integration">E</div>
+            <div class="badge" title="Empathy - Designing with compassion and understanding">E</div>
+        </div>
+    </header>
+    
+    <main class="content">
+        <section class="stats-section">
+            <h2 class="section-title">Research Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Research Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Average Innovation Score</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Research Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Expected PhD Completion</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">Research Publications</h2>
+            <p class="section-subtitle">Exploring the intersection of AI, ethics, and human-centered design through academic research and practical implementation</p>
+            
+            <div class="papers-grid">
+                <article class="paper-card">
+                    <h3 class="paper-title">The AIEE Framework: Accessibility, Intelligence, Ethics and Empathy in AI Systems Design</h3>
+                    <div class="paper-meta">
+                        <span class="category-badge">AI Ethics</span>
+                        <span class="year-badge">2024</span>
+                    </div>
+                    <p class="paper-description">A comprehensive framework for ethical AI integration that emphasizes accessibility, intelligence, ethics, and empathy. This research addresses the critical need for human-centered AI systems that consider diverse user needs and cognitive abilities, drawing from lived experience with DiGeorge syndrome to inform inclusive design principles.</p>
+                    <div class="paper-footer">
+                        <span class="venue">International Journal of AI Ethics</span>
+                        <span class="innovation-score">92% Innovation</span>
+                    </div>
+                </article>
+
+                <article class="paper-card">
+                    <h3 class="paper-title">Empathetic AI: Designing for Cognitive Diversity in Academic Research Platforms</h3>
+                    <div class="paper-meta">
+                        <span class="category-badge">Human-Computer Interaction</span>
+                        <span class="year-badge">2024</span>
+                    </div>
+                    <p class="paper-description">An exploration of how AI systems can be designed to support users with diverse cognitive abilities, particularly in academic research contexts. This work examines the role of empathy in AI design and proposes practical methodologies for creating more inclusive research tools.</p>
+                    <div class="paper-footer">
+                        <span class="venue">ACM Conference on Human Factors</span>
+                        <span class="innovation-score">85% Innovation</span>
+                    </div>
+                </article>
+
+                <article class="paper-card">
+                    <h3 class="paper-title">Digital Portfolio Evolution: From Static Showcases to Dynamic Research Ecosystems</h3>
+                    <div class="paper-meta">
+                        <span class="category-badge">Educational Technology</span>
+                        <span class="year-badge">2024</span>
+                    </div>
+                    <p class="paper-description">A comprehensive analysis of how digital portfolios have evolved from simple document repositories to sophisticated research platforms. This paper examines the integration of AI-powered analysis tools and collaborative features that transform portfolios into active research ecosystems.</p>
+                    <div class="paper-footer">
+                        <span class="venue">Journal of Educational Technology</span>
+                        <span class="innovation-score">80% Innovation</span>
+                    </div>
+                </article>
+
+                <article class="paper-card">
+                    <h3 class="paper-title">Music Technology and ePortfolio Innovation: A Practice-Led Design Approach</h3>
+                    <div class="paper-meta">
+                        <span class="category-badge">Music Technology</span>
+                        <span class="year-badge">2021</span>
+                    </div>
+                    <p class="paper-description">This research examines the design of ePortfolios for music education using Web 2.0 technologies. Through practice-led research methodology, the study explores how digital portfolios can facilitate creative dialogue and showcase artistic development in music postgraduate programs.</p>
+                    <div class="paper-footer">
+                        <span class="venue">Journal of Music, Technology & Education</span>
+                        <span class="innovation-score">75% Innovation</span>
+                    </div>
+                </article>
+
+                <article class="paper-card">
+                    <h3 class="paper-title">Designing Web 2.0 ePortfolios for music postgraduate study: A practice-led enquiry</h3>
+                    <div class="paper-meta">
+                        <span class="category-badge">Human-Computer Interaction</span>
+                        <span class="year-badge">2021</span>
+                    </div>
+                    <p class="paper-description">This article examines the design of ePortfolios for music postgraduate students utilizing a practice-led design iterative research process. It suggests that Web 2.0 technologies provide creative artists with opportunities to engage in dialogue about art with artifacts present in that discussion, leading to more dynamic and inclusive portfolio systems.</p>
+                    <div class="paper-footer">
+                        <span class="venue">Journal of Music, Technology & Education</span>
+                        <span class="innovation-score">78% Innovation</span>
+                    </div>
+                </article>
+
+                <article class="paper-card">
+                    <h3 class="paper-title">Tony.AI: An Empathetic Research Mentor for Cognitive Accessibility</h3>
+                    <div class="paper-meta">
+                        <span class="category-badge">AI Ethics</span>
+                        <span class="year-badge">2024</span>
+                    </div>
+                    <p class="paper-description">Development of Tony.AI, an empathetic AI research assistant designed specifically for users with cognitive challenges. This work demonstrates how AI can be programmed with empathy and understanding to provide supportive, patient, and encouraging research assistance while maintaining ethical boundaries.</p>
+                    <div class="paper-footer">
+                        <span class="venue">AI & Society Journal</span>
+                        <span class="innovation-score">88% Innovation</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 style="color: #FCD34D; margin-bottom: 1rem;">Paul Stephensen's Research Portfolio</h3>
+            <p style="margin-bottom: 1rem;">PhD Candidate at James Cook University</p>
+            <p style="color: #9ca3af;">Advancing AI Ethics through the AIEE Framework • Building Accessible Research Platforms</p>
+            <p style="color: #6b7280; margin-top: 1rem; font-size: 0.9rem;">© 2025 Paul Stephensen. Part of the paulseportfolio.ai research ecosystem.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Enhanced iframe communication and responsiveness
+        function initializePortfolio() {
+            // Notify parent window about iframe readiness with detailed metrics
+            if (window.parent !== window) {
+                const portfolioData = {
+                    type: 'portfolio-loaded',
+                    height: document.body.scrollHeight,
+                    width: document.body.scrollWidth,
+                    paperCount: 6,
+                    loadTime: performance.now(),
+                    timestamp: new Date().toISOString()
+                };
+                window.parent.postMessage(portfolioData, '*');
+            }
+            
+            // Auto-adjust height for responsive iframe embedding
+            function adjustHeight() {
+                const actualHeight = Math.max(
+                    document.body.scrollHeight,
+                    document.documentElement.scrollHeight,
+                    900 // minimum height
+                );
+                
+                if (window.parent !== window) {
+                    window.parent.postMessage({
+                        type: 'resize-iframe',
+                        height: actualHeight,
+                        width: document.body.scrollWidth
+                    }, '*');
+                }
+            }
+            
+            // Enhanced event listeners for better responsiveness
+            window.addEventListener('load', adjustHeight);
+            window.addEventListener('resize', adjustHeight);
+            
+            // Monitor content changes for dynamic height adjustment
+            const observer = new ResizeObserver(adjustHeight);
+            observer.observe(document.body);
+            
+            // Smooth scrolling for better user experience
+            document.documentElement.style.scrollBehavior = 'smooth';
+            
+            // Enhanced accessibility features
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach(badge => {
+                badge.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        badge.click();
+                    }
+                });
+                badge.setAttribute('tabindex', '0');
+                badge.setAttribute('role', 'button');
+            });
+            
+            // Intersection Observer for animation triggers
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Apply fade-in animation to paper cards
+            const paperCards = document.querySelectorAll('.paper-card');
+            paperCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                animationObserver.observe(card);
+            });
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePortfolio);
+        } else {
+            initializePortfolio();
+        }
+        
+        // Performance monitoring for iframe optimization
+        window.addEventListener('load', () => {
+            const loadTime = performance.now();
+            console.log(`Portfolio loaded in ${loadTime.toFixed(2)}ms`);
+            
+            // Report performance metrics to parent
+            if (window.parent !== window) {
+                window.parent.postMessage({
+                    type: 'performance-metrics',
+                    loadTime: loadTime,
+                    domContentLoaded: performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart,
+                    resourcesLoaded: performance.timing.loadEventEnd - performance.timing.navigationStart
+                }, '*');
+            }
+        });
+    </script>
+</body>
+</html>
