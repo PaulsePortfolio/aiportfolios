@@ -1,0 +1,16 @@
+name: research-eportfolio-app
+static_sites:
+  - name: client
+    root: /client
+    build_command: npm install && npm run build
+    publish_directory: /client/build
+
+services:
+  - name: backend
+    type: web
+    root: /server
+    build_command: npm install
+    start_command: node index.js
+    environment:
+      PORT: 8080
+    http_port: 8080
